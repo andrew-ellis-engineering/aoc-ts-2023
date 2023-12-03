@@ -28,7 +28,7 @@ export function parseInput<T>({
   split,
 }: { split?: SplitOptions<T> | false } = {}) {
   const input = readFileSync(
-    `./src/day${formatDay(process.env.npm_config_day!)}/input.txt`,
+    `./src/day${formatDay(process.argv[2]!)}/input.txt`,
     {
       encoding: 'utf-8',
     }
