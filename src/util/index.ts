@@ -27,6 +27,7 @@ export function parseInput<T>(options: { split: SplitOptions<T> }): T[];
 export function parseInput<T>({
   split,
 }: { split?: SplitOptions<T> | false } = {}) {
+  console.log(`Opening ./src/day${formatDay(process.argv[2]!)}/input.txt`)
   const input = readFileSync(
     `./src/day${formatDay(process.argv[2]!)}/input.txt`,
     {
