@@ -1,7 +1,7 @@
 ## Usage
 
 ```
-npm start --day=DAY --part=PART
+npm start -- DAY PART
 ```
 - Where `0<DAY<26` and `0<PART<3`
 - E.g: To run day 7, part 2 that would be `npm start --day=7 --part=2`
