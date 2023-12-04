@@ -23,4 +23,4 @@ for (let lineInfo of input) {
     sumOfMinimumPowers += redMax * greenMax * blueMax;
 }
 
-console.log(sumOfMinimumPowers)
+export default sumOfMinimumPowers;

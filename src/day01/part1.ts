@@ -14,4 +14,4 @@ for (let line of input) {
     sum += lineCalibration;
 }
 
-console.log(sum);
+export default sum;

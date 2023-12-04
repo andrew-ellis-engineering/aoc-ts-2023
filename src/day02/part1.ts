@@ -20,4 +20,4 @@ for (let lineInfo of input) {
     }
 }
 
-console.log(sumOfIds)
+export default sumOfIds;

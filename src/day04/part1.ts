@@ -28,4 +28,4 @@ for (let line of input) {
     totalScore += thisCardScore;
 }
 
-console.log(totalScore);
+export default totalScore;

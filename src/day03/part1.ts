@@ -39,4 +39,4 @@ for (const [row, line] of grid.entries()) {
     }
 }
 
-console.log(sum)
+export default sum;

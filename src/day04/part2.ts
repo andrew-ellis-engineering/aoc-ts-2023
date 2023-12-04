@@ -40,4 +40,4 @@ cardMap.forEach((value, key) => {
     totalCards += value;
 })
 
-console.log(totalCards);
+export default totalCards;
