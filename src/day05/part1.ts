@@ -13,15 +13,11 @@ benchmark(() => {
     let mappings = data.mappings;
 
     for (let map of mappings) {
-        // console.log(map.toString());
         for (let i = 0; i < seeds.length; i++) {
             let s = map.map(seeds[i]);
             seeds[i] = s;
         }
-        // console.log(seeds);
     }
-
-    // console.log(seeds);
 
     for (let l of seeds) {
         if (l < lowestLocation) {
