@@ -10,8 +10,6 @@ for (let i = 0; i < input.length; i++) {
     cardMap.set(i+1, 1);
 }
 
-console.log(`Starting with ${cardMap.size} cards`);
-
 for (let line of input) {
     let split;
     split = line.split(':');
