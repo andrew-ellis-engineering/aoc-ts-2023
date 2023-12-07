@@ -1,4 +1,4 @@
-const cardValues = {
+const cardValues: {[index: string]: any} = {
     'A': 13,
     'K': 12,
     'Q': 11,
@@ -14,7 +14,7 @@ const cardValues = {
     '2': 1,
 }
 
-const cardValuesPart2 = {
+const cardValuesPart2: {[index: string]: any} = {
     'A': 13,
     'K': 12,
     'Q': 11,
@@ -64,17 +64,13 @@ class Hands {
             }
             if (part2) {
                 for (let i = 0; i < a.cards.length; i++) {
-                    // @ts-ignore
                     if (cardValuesPart2[a.cards[i]] !== cardValuesPart2[b.cards[i]]) {
-                        // @ts-ignore
                         return cardValuesPart2[a.cards[i]] - cardValuesPart2[b.cards[i]];
                     }
                 }
             } else {
                 for (let i = 0; i < a.cards.length; i++) {
-                    // @ts-ignore
                     if (cardValues[a.cards[i]] !== cardValues[b.cards[i]]) {
-                        // @ts-ignore
                         return cardValues[a.cards[i]] - cardValues[b.cards[i]];
                     }
                 }
@@ -108,29 +104,22 @@ export const dataTransformer = (input: string[], part2 = false) => {
 
 const getHandType = (hand: string, part2 = false): HandType => {
     const cards = hand.split('');
-    let counter = {};
+    let counter: {[index: string]: any} = {};
     if (part2) {
         cards.sort(compareCards);
     }
     for (let c of cards) {
-        // @ts-ignore
         if (counter[c] === undefined) {
-            // @ts-ignore
             counter[c] = 0;
         }
-        // @ts-ignore
         counter[c] = counter[c] + 1;
     }
 
     if (part2) {
         let jCount = 0;
-        // @ts-ignore
         if (counter['J'] !== undefined) {
-            // @ts-ignore
             if (counter['J'] !== 5) {
-                // @ts-ignore
                 jCount = counter['J'];
-                // @ts-ignore
                 counter['J'] = 0;
             }
         }
@@ -138,19 +127,15 @@ const getHandType = (hand: string, part2 = false): HandType => {
         if (jCount > 0) {
             let cardMax = 0, cardMaxIndex = '';
             for (let c of cards) {
-                // @ts-ignore
                 if (counter[c] > cardMax) {
-                    // @ts-ignore
                     cardMax = counter[c];
                     cardMaxIndex = c;
                 }
             }
 
             if (cardMax > 1) {
-                // @ts-ignore
                 counter[cardMaxIndex] = counter[cardMaxIndex] + jCount;
             } else {
-                // @ts-ignore
                 counter[cards[0]] = counter[cards[0]] + jCount;
             }
         }
@@ -160,19 +145,15 @@ const getHandType = (hand: string, part2 = false): HandType => {
     let hasTwo = false;
     let hasTwoPair = false;
     for (let c in counter) {
-        // @ts-ignore
         if (counter[c] === 5) {
             return HandType.FIVE;
         }
-        // @ts-ignore
         if (counter[c] === 4) {
             return HandType.FOUR;
         }
-        // @ts-ignore
         if (counter[c] === 3) {
             hasThree = true;
         }
-        // @ts-ignore
         if (counter[c] === 2) {
             if (hasTwo) hasTwoPair = true;
             hasTwo = true;
@@ -199,6 +180,5 @@ const getHandType = (hand: string, part2 = false): HandType => {
 }
 
 const compareCards = (a: string, b: string) => {
-     // @ts-ignore
     return cardValuesPart2[b] - cardValuesPart2[a];
 }
