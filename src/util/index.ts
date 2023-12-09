@@ -1,7 +1,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 
 const example = process.argv[4];
-const file = example === undefined ? 'input.txt' : 'example.txt';
+const file = example === '--example' ? 'example.txt' : 'input.txt';
 console.log(example, file)
 
 export const formatDay = (day: number | string) =>
