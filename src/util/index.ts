@@ -2,7 +2,6 @@ import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 
 const example = process.argv[4];
 const file = example === '--example' ? 'example.txt' : 'input.txt';
-console.log(example, file)
 
 export const formatDay = (day: number | string) =>
   day.toString().padStart(2, '0');
